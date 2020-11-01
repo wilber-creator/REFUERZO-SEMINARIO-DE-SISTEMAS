@@ -4,34 +4,11 @@ var router = express.Router();
 const movie = require('../database/movie');
 const MOVIE = movie.model;
 const MOVIESCHEMA = movie.schema;
-
-var valid = require('../utils/valid');
-
 //POST
 router.post('/movie', async(req, res) => {
     console.log(req.body);
     var params = req.body;
     params["registerdate"] = new Date();
-
-    /*if (!valid.checkParams(MOVIESCHEMA, params)){
-        res.status(300).json({
-          msn: "PARAMETROS INCORRECTOS"
-        });
-        return;
-      }
-    if (!valid.checkEmail(params.email)){
-        res.status(300).json({
-          msn: "EMAIL INCORRECTO"
-        });
-        return;
-    }
-    if (!valid.checkPassword(params.password)){
-        res.status(300).json({
-          msn: "PASSWORD INCORRECTO"
-        });
-        return;
-    }*/
-
     var movies = new MOVIE(params);
     var result = await movies.save();
     res.status(200).json(result);
