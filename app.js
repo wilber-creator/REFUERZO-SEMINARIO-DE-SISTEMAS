@@ -7,7 +7,7 @@ var logger = require('morgan');
 //var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
 var apirouter = require('./routes/apirouter');
-//var serviceupdateavatar = require('./routes/updateavatar');
+var serviceupdateportadas = require('./routes/updateportadas');
 
 var app = express();
 
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/', indexRouter);
 //app.use('/users', usersRouter);
 app.use('/v1.0/api', apirouter);
-//app.use('/v1.0/api', serviceupdateavatar);
+app.use('/v1.0/api', serviceupdateportadas);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
