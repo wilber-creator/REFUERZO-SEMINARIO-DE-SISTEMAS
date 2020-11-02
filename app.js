@@ -8,7 +8,7 @@ var logger = require('morgan');
 //var usersRouter = require('./routes/users');
 var apirouter = require('./routes/apirouter');
 var serviceupdateportadas = require('./routes/updateportadas');
-
+var serviceupdatefotoprincipal = require('./routes/updatefotoprincipal');
 var app = express();
 
 // view engine setup
@@ -25,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/users', usersRouter);
 app.use('/v1.0/api', apirouter);
 app.use('/v1.0/api', serviceupdateportadas);
+app.use('/v1.0/api', serviceupdatefotoprincipal);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
