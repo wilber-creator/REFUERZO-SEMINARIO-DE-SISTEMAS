@@ -1,6 +1,6 @@
 var mongoose = require("./connect");
 var updatefotoprincipalSchema = new mongoose.Schema({
-    fotoprincipal: {
+    foto1: {
         type: String,
         required: [true, "la ruta de la foto principal es necesaria"]
     },
@@ -8,7 +8,7 @@ var updatefotoprincipalSchema = new mongoose.Schema({
         type: String
     },
     
-    hash: {
+    hash1: {
         type: String,
         required: [true, "la ruta de la foto principal es necesaria"]
     }
