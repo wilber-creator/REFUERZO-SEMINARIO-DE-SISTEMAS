@@ -38,7 +38,7 @@ router.get('/getupdatefotoprincipal', (req, res, next) => {
   });
 });
 
-router.get("/getfilefotoprincipal", async(req, res, next) => {
+router.get("/getfile", async(req, res, next) => {
     var params = req.query;
     if (params == null) {
         res.status(300).json({ msn: "Error es necesario un ID"});

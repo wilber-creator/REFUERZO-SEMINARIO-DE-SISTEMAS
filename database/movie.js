@@ -5,6 +5,9 @@ var MOVIESCHEMA = {
     sinopsis    :String,
     idioma      :String,
     rating      :String,
+    servidores  :[{
+
+    }],
     
 }
 
